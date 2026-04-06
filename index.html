@@ -4,298 +4,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Om - Frontend Developer & UI Designer Portfolio. Specializing in React, Tailwind, and Modern Web Experiences.">
-    <title>Om | Frontend Developer & UI Designer</title>
-    <!-- Google Fonts -->
+    <meta name="description" content="Om Sawant - B.Tech CSE Student, Tech Lead, and Full-Stack Developer. Portfolio showcasing projects in AI, EdTech, and Fintech.">
+    <title>Om Sawant | Tech Lead & Full-Stack Developer</title>
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-dark: hsl(222, 47%, 11%);
-            --glass-bg: rgba(30, 41, 59, 0.7);
-            --glass-border: rgba(255, 255, 255, 0.1);
-            --primary: hsl(217, 91%, 60%);
-            --secondary: hsl(250, 89%, 60%);
-            --accent: hsl(142, 70%, 45%);
-            --text-main: hsl(210, 40%, 98%);
-            --text-dim: hsl(215, 20%, 65%);
-            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
-            --shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3 {
-            font-family: 'Outfit', sans-serif;
-            font-weight: 700;
-        }
-
-        /* Particles/Background Mesh */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 30%, hsla(217, 91%, 60%, 0.15), transparent 40%),
-                radial-gradient(circle at 80% 70%, hsla(250, 89%, 60%, 0.15), transparent 40%);
-            z-index: -1;
-        }
-
-        header {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .avatar-container {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            padding: 5px;
-            background: var(--gradient);
-            margin-bottom: 24px;
-            animation: float 6s ease-in-out infinite;
-            box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
-        }
-
-        .avatar-container img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid var(--bg-dark);
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
-        }
-
-        h1 {
-            font-size: clamp(3rem, 8vw, 5rem);
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
-        }
-
-        .hero-tagline {
-            font-size: 1.25rem;
-            color: var(--text-dim);
-            max-width: 600px;
-            margin-bottom: 30px;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 12px 32px;
-            background: var(--gradient);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 10px 20px -10px var(--primary);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 25px -10px var(--primary);
-        }
-
-        section {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 100px 20px;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-            text-align: center;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background: var(--primary);
-            margin: 15px auto 0;
-            border-radius: 2px;
-        }
-
-        /* Projects Grid */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-
-        .project-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            padding: 30px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary);
-            box-shadow: var(--shadow);
-        }
-
-        .project-card h3 {
-            margin-bottom: 12px;
-            color: var(--primary);
-        }
-
-        .project-card p {
-            color: var(--text-dim);
-            font-size: 0.95rem;
-        }
-
-        /* Skills Section */
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .skill-badge {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            padding: 10px 24px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .skill-badge:hover {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
-            transform: scale(1.05);
-        }
-
-        /* Contact Section */
-        .contact-card {
-            background: var(--gradient);
-            border-radius: 30px;
-            padding: 60px;
-            text-align: center;
-            color: white;
-        }
-
-        .contact-card h2 {
-            margin-bottom: 20px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px;
-            color: var(--text-dim);
-            font-size: 0.9rem;
-            border-top: 1px solid var(--glass-border);
-        }
-
-        @media (max-width: 768px) {
-            h1 { font-size: 3rem; }
-            section { padding: 60px 20px; }
-        }
-    </style>
+    
+    <!-- External Styles -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <header>
         <div class="avatar-container">
-            <!-- Avatar generated by AI -->
-            <img src="assets/avatar.png" alt="Om's Avatar">
+            <img src="assets/avatar.png" alt="Om Sawant's Portrait">
         </div>
-        <h1>Hi, I'm Om 👋</h1>
-        <p class="hero-tagline">
-            Crafting premium digital experiences as a <strong>Frontend Developer</strong> & <strong>UI Designer</strong>. 
-            I turn complex ideas into elegant realities.
+        <h1 class="scroll-reveal">Om Sawant</h1>
+        <p class="hero-tagline scroll-reveal">
+            <strong>Tech Lead</strong> & <strong>Full-Stack Developer</strong> 🚀. 
+            Merging innovative technology with business strategy to solve real-world problems.
         </p>
-        <a href="#projects" class="cta-button">View My Work</a>
+        <div class="cta-group scroll-reveal">
+            <a href="#projects" class="cta-button">See My Work</a>
+            <a href="#contact" class="cta-button outline">Let's Talk</a>
+        </div>
     </header>
 
-    <section id="projects">
-        <h2 class="section-title">Featured Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <h3>Meal Subscription Hub</h3>
-                <p>A full-stack React application with high-octane Tailwind CSS animations for custom diet planning.</p>
+    <section id="about" class="scroll-reveal">
+        <h2 class="section-title">Career <span>Objective</span></h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto; font-size: 1.1rem; color: var(--text-dim);">
+            Second-year B.Tech student in Computer Science and Engineering at <strong>ITM Skills University</strong>. 
+            Actively building a strong foundation in core technologies and seeking industry-level experience to accelerate technical and professional growth.
+        </p>
+    </section>
+
+    <section id="experience">
+        <h2 class="section-title">Professional <span>Experience</span></h2>
+        <div class="experience-list">
+            <div class="experience-card scroll-reveal">
+                <div class="exp-header">
+                    <span class="exp-date">Sep 2025 – Present</span>
+                    <h3>Desi Destiny</h3>
+                    <p>Tech Lead (Dating App Startup)</p>
+                </div>
+                <div class="exp-content">
+                    <ul>
+                        <li>Leading frontend and backend teams for a dating platform optimized for the Indian audience.</li>
+                        <li>Overseeing full-stack development, UI/UX design, and API integration.</li>
+                        <li>Architecting secure authentication and real-time chat features.</li>
+                    </ul>
+                </div>
             </div>
-            <div class="project-card">
-                <h3>Mumbai Metro X</h3>
-                <p>Real-time transit tracker for Mumbai local trains and buses using live GTFS data and MapLibre.</p>
+
+            <div class="experience-card scroll-reveal">
+                <div class="exp-header">
+                    <span class="exp-date">June 2025 – Nov 2025</span>
+                    <h3>Bundlwise</h3>
+                    <p>Front-End Developer (by IIM Kozhikode)</p>
+                </div>
+                <div class="exp-content">
+                    <ul>
+                        <li>Contributed to React Native app development under IIM Kozhikode mentorship.</li>
+                        <li>Implemented responsive UI components and optimized performance.</li>
+                        <li>Collaborated closely with backend teams for seamless API orchestration.</li>
+                    </ul>
+                </div>
             </div>
-            <div class="project-card">
-                <h3>EcoBloom Dashboard</h3>
-                <p>An interactive data visualization tool for monitoring home garden health and soil metrics.</p>
+
+            <div class="experience-card scroll-reveal">
+                <div class="exp-header">
+                    <span class="exp-date">2024 – Present</span>
+                    <h3>Hackathon Lead</h3>
+                    <p>Team Lead & Developer</p>
+                </div>
+                <div class="exp-content">
+                    <ul>
+                        <li>Participated in 4+ national hackathons including <strong>Mumbai Hacks</strong>.</li>
+                        <li>Leading multidisciplinary teams across AI, HealthTech, and Travel-Tech.</li>
+                        <li>Designing innovative solutions that combine business strategy with technology.</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="skills">
-        <h2 class="section-title">My Toolkit</h2>
-        <div class="skills-container">
-            <span class="skill-badge">React</span>
-            <span class="skill-badge">TypeScript</span>
-            <span class="skill-badge">Next.js</span>
-            <span class="skill-badge">TailwindCSS</span>
-            <span class="skill-badge">Figma</span>
-            <span class="skill-badge">Node.js</span>
-            <span class="skill-badge">Three.js</span>
-            <span class="skill-badge">UI/UX Design</span>
+        <h2 class="section-title">My <span>Toolkit</span></h2>
+        <div class="skills-grid">
+            <div class="skill-category scroll-reveal">
+                <h4>Languages</h4>
+                <div class="skills-list">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">C++</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">React.js</span>
+                    <span class="skill-tag">React Native</span>
+                </div>
+            </div>
+            <div class="skill-category scroll-reveal">
+                <h4>Frameworks & Tools</h4>
+                <div class="skills-list">
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">TailwindCSS</span>
+                    <span class="skill-tag">PostgreSQL</span>
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">MongoDB</span>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="contact">
-        <div class="contact-card">
-            <h2>Let's build something epic.</h2>
-            <p>I'm currently available for freelance work and full-time opportunities.</p>
-            <br>
-            <a href="mailto:yourmail@gmail.com" class="cta-button" style="background: white; color: var(--primary);">Get In Touch</a>
+    <section id="projects">
+        <h2 class="section-title">Featured <span>Projects</span></h2>
+        <div class="projects-grid">
+            <div class="project-card scroll-reveal">
+                <span class="project-tag">Full-Stack | E-Commerce</span>
+                <h3>Apna Dukan</h3>
+                <p>Comprehensive e-commerce platform for small businesses with local order handling, product management, and cart systems.</p>
+            </div>
+            <div class="project-card scroll-reveal">
+                <span class="project-tag">AI | NLP</span>
+                <h3>DeFakeAI</h3>
+                <p>Transformer-based fake news detection platform identifying misinformation in real-time with high accuracy.</p>
+            </div>
+            <div class="project-card scroll-reveal">
+                <span class="project-tag">TravelTech | SIH</span>
+                <h3>Safar</h3>
+                <p>Smart India Hackathon project digitizing offline travel agencies with SOS features and live transit tracking.</p>
+            </div>
+            <div class="project-card scroll-reveal">
+                <span class="project-tag">Fintech | UI/UX</span>
+                <h3>Bundlwise App</h3>
+                <p>A sleek subscription management app designed to track premium services with automated reminders.</p>
+            </div>
+            <div class="project-card scroll-reveal">
+                <span class="project-tag">HealthTech</span>
+                <h3>MedCare Scheduler</h3>
+                <p>Predictive AI-based medical equipment maintenance system with technician assignment and dashboard analytics.</p>
+            </div>
+            <div class="project-card scroll-reveal">
+                <span class="project-tag">Safety | IoT</span>
+                <h3>Fem-Shield</h3>
+                <p>IoT-enabled women safety application with real-time tracking and fast SOS emergency response.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="scroll-reveal">
+        <div class="experience-card" style="text-align: center; display: block; background: var(--gradient); border: none;">
+            <h2 style="color: white; margin-bottom: 20px;">Ready for the next challenge?</h2>
+            <p style="color: rgba(255,255,255,0.9); margin-bottom: 30px;">
+                I'm currently seeking industrial exposure and internship opportunities. 
+                Let's build something impactful together.
+            </p>
+            <a href="mailto:omoffice1305@gmail.com" class="cta-button" style="background: white; color: var(--primary);">Contact Me</a>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Om Sawant. Built with Passion & Precision.</p>
+        <p>&copy; 2026 Om Sawant. ITM Skills University CSE '28. ✨ Built with passion.</p>
+        <p style="font-size: 0.8rem; margin-top: 10px; color: var(--text-dim);">
+            Email: omoffice1305@gmail.com | Phone: +91-9137883718
+        </p>
     </footer>
 
+    <!-- External Script -->
+    <script src="script.js"></script>
 </body>
 
 </html>
